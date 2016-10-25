@@ -1,0 +1,15 @@
+package middlewaredemo;
+
+public class MiddleWareDemo {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String className;
+		String methodName;
+		Class<MiddleWare> paramTypes = MiddleWare.class;
+		Object obj ;
+		
+	}
+
+}

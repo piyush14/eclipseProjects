@@ -1,0 +1,17 @@
+package fileoperations;
+
+import java.io.IOException;
+
+import readwrite.ReadWrite;
+
+public class FileOperations {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		ReadWrite rw = new ReadWrite();
+		rw.Read();
+		rw.write();
+
+	}
+
+}

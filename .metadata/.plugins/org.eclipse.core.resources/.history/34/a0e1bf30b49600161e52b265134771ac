@@ -1,0 +1,5 @@
+package com.insuffbal;
+
+public class InsufficientBalanceException {
+
+}

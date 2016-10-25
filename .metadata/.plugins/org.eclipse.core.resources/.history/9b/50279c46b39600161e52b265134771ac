@@ -1,0 +1,16 @@
+package com.difftrycatch;
+
+public class Trycatch {
+	
+	public void test(){
+		try{
+			int ans = 5 /0;
+		}catch(ArithmeticException e){
+			e.printStackTrace();
+		}
+		catch (NullPointerException e) {
+			e.printStackTrace(); 
+		}
+	}
+
+}

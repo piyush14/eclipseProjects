@@ -1,0 +1,37 @@
+package hospital;
+
+import java.util.Random;
+
+public class Hospital {
+	public static void main(String[] args) throws Exception {
+
+        Random r = new Random();
+        BloodPressureManagerOuter bm = new BloodPressureManagerOuter();
+        BloodPressureManagerOuter.HighBloodPressureInner hbpl = bm.new HighBloodPressureInner();
+
+        while (true) {
+            int value = r.nextInt(150);
+            bm.addData(value);
+           // bm.addData(value);
+            Thread.sleep(500);
+        }
+    }
+}
+
+class BloodPressureManagerOuter {
+
+    private int value;
+    public void addData(int value) {
+        this.value = value;
+    }
+
+    
+    class HighBloodPressureInner  {
+
+       
+        
+
+    }
+
+    
+}

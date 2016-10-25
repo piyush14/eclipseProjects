@@ -1,0 +1,23 @@
+package fileoperations;
+
+import java.io.File;
+import java.io.IOException;
+
+import filedetails.FileDetails;
+import readwrite.ReadWrite;
+
+public class FileOperations {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		/*ReadWrite rw = new ReadWrite();
+		rw.Read();
+		rw.write();
+		*/
+		File currentDir = new File("."); // current directory
+		//displayDirectoryContents(currentDir);
+		FileDetails fd = new FileDetails();
+		fd.showDetails(currentDir);
+	}
+
+}

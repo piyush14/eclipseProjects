@@ -1,0 +1,45 @@
+public class BankDataTester
+11: {
+12: public static void main(String[] args)
+13: throws IOException
+14: {
+15: Scanner in = new Scanner(System.in);
+16: BankData data = new BankData();
+17: try {
+19: data.open("bank.dat");
+20:
+21: boolean done = false;
+22: while (!done)
+23: {
+24: System.out.print("Account number: ");
+25: int accountNumber = in.nextInt();
+26: System.out.print("Amount to deposit: ");
+27: double amount = in.nextDouble();
+28:
+29: int position = data.find(accountNumber);
+30: BankAccount account;
+31: if (position >= 0)
+32: {
+33: account = data.read(position);
+34: account.deposit(amount); System.out.println("new balance="
+36: + account.getBalance());
+37: }
+38: else // Add account
+39: {
+40: account = new BankAccount(accountNumber,
+41: amount);
+42: position = data.size();
+43: System.out.println("adding new account");
+44: }
+45: data.write(position, account);
+46:
+47: System.out.print("Done? (Y/N) ");
+48: String input = in.next();
+49: if (input.equalsIgnoreCase("Y")) done = true;
+50: }
+51: } finally
+53: {
+54: data.close();
+55: }
+56: }
+57: }

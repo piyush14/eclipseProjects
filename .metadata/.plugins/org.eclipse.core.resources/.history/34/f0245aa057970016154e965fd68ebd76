@@ -1,0 +1,13 @@
+package serialize;
+
+import java.io.Serializable;
+
+public class AccDetails implements Serializable {
+	public int Id;
+	public String name;
+	
+	public AccDetails(int Id,String name) {
+		this.Id = Id;
+		this.name = name;
+	}
+}

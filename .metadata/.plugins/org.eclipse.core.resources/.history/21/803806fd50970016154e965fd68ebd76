@@ -1,0 +1,15 @@
+package readwrite;
+
+import java.io.*;
+
+public class ReadWrite {
+	File file = new File("f1.txt");
+	FileInputStream fis = new FileInputStream(file);
+	StringBuilder sb = new StringBuilder("");
+	int i=0; 
+	do{
+		i = fis.read();
+		if(i != -1)
+		sb.append((char)i);
+	}while(i != -1);
+}

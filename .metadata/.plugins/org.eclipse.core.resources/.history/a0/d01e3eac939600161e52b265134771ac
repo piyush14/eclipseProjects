@@ -1,0 +1,31 @@
+package com.cachedata;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class App {
+	private int cash;
+	private String name;
+	private long date;
+	private class Cache{
+		
+		
+		HashMap<Integer,String> hm=new HashMap<Integer,String>();
+		
+		public Cache(){
+			
+		}
+		
+		
+	}
+	
+	public void addData(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter cash amount");
+	}
+	
+	public void getData(){
+		Cache c1;
+	}
+}

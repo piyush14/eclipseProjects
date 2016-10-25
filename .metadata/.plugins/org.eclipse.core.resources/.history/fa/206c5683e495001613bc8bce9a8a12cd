@@ -1,0 +1,17 @@
+package middlewaredemo;
+
+public class MiddleWareDemo {
+
+	public static String toUpperCase(){
+		return null;
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String className;
+		String methodName;
+		Class<MiddleWareDemo> paramTypes = MiddleWareDemo.class;
+		
+	}
+
+}

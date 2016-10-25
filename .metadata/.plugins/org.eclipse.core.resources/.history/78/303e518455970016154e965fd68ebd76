@@ -1,0 +1,32 @@
+package account;
+
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class AccountDetails {
+	public int acc_id;
+	public String  name;
+	public double balance;
+	
+	public void addDetails() throws IOException{
+		File file = new File("abc.txt");
+		FileOutputStream fos = new FileOutputStream(file);
+		DataOutputStream dos = new DataOutputStream(fos);
+		dos.writeInt(23);
+		dos.writeUTF("Tom");
+		dos.writeDouble(12000.85);
+		
+		dos.writeInt(29);
+		dos.writeUTF("Jerry");
+		dos.writeDouble(8960.5);
+		
+		dos.writeInt(43);
+		dos.writeUTF("Cat");
+		dos.writeDouble(4587.85);
+	}
+	public void showDetails(){
+		
+	}
+}

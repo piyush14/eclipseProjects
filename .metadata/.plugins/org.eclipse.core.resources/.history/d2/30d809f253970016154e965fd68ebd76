@@ -1,0 +1,17 @@
+package filedetails;
+
+import java.io.File;
+
+public class FileDetails {
+	String path = "D:/study/StudyMaterial";
+	public void showDetails(final File folder){
+		
+		for (final File fileEntry : folder.listFiles()) {
+	        if (fileEntry.isDirectory()) {
+	        	showDetails(fileEntry);
+	        } else {
+	            System.out.println(fileEntry.getName());
+	        }
+		}
+	}
+}

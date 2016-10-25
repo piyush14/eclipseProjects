@@ -1,0 +1,63 @@
+package com.cachedata;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class App {
+	private int ID;
+	private String value;
+	Date dateobj = new Date();
+	//////////////////////
+	private class Cache{
+		
+		private int ID;
+		private String value;
+
+		HashMap<Integer,Date> hm=new HashMap<Integer,Date>();
+		
+		public Cache(int ID, String value){
+			this.ID = ID;
+			this.value = value;
+		}
+		public void f(){
+			
+			hm.put(ID, dateobj);
+			System.out.println(hm);
+		}
+		
+	}
+	////////////////////////////
+	
+	public App(int ID,String value ) {
+		this.ID = ID;	
+		this.value = value;
+	}
+	public App() {
+		
+	}
+
+	public void addData(int ID,String value){
+		Cache c = new Cache(ID,value);
+		c.f();
+		
+	}
+	
+	public void getData(){
+		Cache c1;
+	}
+}
+
+class Wrapper{
+	String value;
+	Date dateobj;
+	Wrapper(String value,Date dateobj){
+		this.value = value;
+		this.dateobj = dateobj;
+	}
+	public Wrapper myWrap(){
+		
+		Wrapper Wrapper;
+		return Wrapper;
+	}
+}

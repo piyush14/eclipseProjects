@@ -1,0 +1,14 @@
+package com.cachedata;
+
+public class Cachedata {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			App a[] = new App[3];
+			a[0].addData(101,"ABC");
+			a[1].addData(105,"ABC");
+			a[2].addData(201,"ABC");
+			
+	}
+
+}

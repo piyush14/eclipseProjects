@@ -1,0 +1,21 @@
+package readwrite;
+
+import java.io.*;
+
+public class ReadWrite {
+	StringBuilder sb = new StringBuilder("");
+	
+	
+	public void read() throws IOException{
+	
+	File file = new File("f1.txt");
+	FileInputStream fis = new FileInputStream(file);
+	
+	int i=0; 
+	do{
+		i = fis.read();
+		if(i != -1)
+		sb.append((char)i);
+		}while(i != -1);
+	}
+}

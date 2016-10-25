@@ -1,0 +1,54 @@
+package randonaccess;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
+public class Bank {
+	RandomAccessFile file;
+	public Bank(){
+		file = null;
+	}
+	
+	
+	public void add() throws IOException{
+		File file = new File("bank.txt");
+		RandomAccessFile raf = new RandomAccessFile(file, "rw");
+		raf.writeInt(23);
+		raf.writeUTF("Tom");
+		raf.writeDouble(12000.85);
+		
+		
+		raf.writeInt(23);
+		raf.writeUTF("Tom");
+		raf.writeDouble(12000.85);
+		
+		
+		raf.close();
+	}
+	
+	public void read() throws IOException{
+		File file = new File("bank.txt");
+		RandomAccessFile raf = new RandomAccessFile(file, "rw");
+		int len =(int) raf.length();
+		System.out.println("LENGTH "+len);
+		while(len>0){
+		int id = raf.readInt();
+		String name = raf.readUTF();
+		double salary = raf.readDouble();
+		
+		System.out.println("ID : "+ id + "NAME : "+ name + "SALARY : "+salary);
+		len = len/2;
+		}
+	}
+	
+	public void open() throws FileNotFoundException{
+		file = new RandomAccessFile("temp.txt", "rw");
+		
+	}
+	
+	public int size() throws IOException {
+		return (int)file.length();
+	}
+}

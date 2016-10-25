@@ -1,0 +1,22 @@
+package sequence;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.SequenceInputStream;
+
+public class SequenceDemo {
+	public void showContents() throws IOException{
+		FileInputStream f1=new FileInputStream("f1");
+		FileInputStream f2=new FileInputStream("f2.txt");
+		FileInputStream f2=new FileInputStream("abc.txt");
+		SequenceInputStream sis=new SequenceInputStream(f1,f2,f3);
+		int i;
+		while((i=sis.read())!=-1){
+			System.out.println((char)i);
+		}
+		sis.close();
+		f1.close();
+		f2.close();
+		f3.close();
+	}
+}

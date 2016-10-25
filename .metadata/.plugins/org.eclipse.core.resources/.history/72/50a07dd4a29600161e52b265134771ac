@@ -1,0 +1,4 @@
+package hospital;
+
+public interface BloodPressureListener {
+	public boolean checkBloodPressure(int value);}

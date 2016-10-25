@@ -1,0 +1,66 @@
+package randonaccess;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
+import fileoperations.FileOperations;
+
+public class Bank {
+	RandomAccessFile file;
+	public Bank(){
+		file = null;
+	}
+	
+	
+	public static void add(int accNo,String name,double bal) throws IOException{
+		File file = new File("bank.txt");
+		RandomAccessFile raf = new RandomAccessFile(file, "rw");
+		System.out.println("ID : "+ accNo + " NAME : "+ name + " SALARY : "+bal);
+
+//		System.out.println("Enter Acc no : ");
+//		System.out.println("Enter Name : ");
+//		System.out.println("Enter Bal : ");
+//		
+		
+		raf.writeInt(accNo);
+		raf.writeUTF(name);
+		raf.writeDouble(bal);
+		//FileOperations.NO_Of_RECORDS ++;
+		
+		
+		
+		raf.close();
+	}
+	
+	public static void read() throws IOException{
+		
+		File file = new File("bank.txt");
+		RandomAccessFile raf = new RandomAccessFile(file, "rw");
+		int len=3; //=FileOperations.NO_Of_RECORDS ;
+	
+		while(len>2){
+			int id = raf.readInt();
+			String name = raf.readUTF();
+			double salary = raf.readDouble();
+		
+			System.out.println("ID : "+ id + " NAME : "+ name + " SALARY : "+salary);
+		len--;
+		
+		}
+		raf.close();
+	}
+	
+	public static void search(int accno) throws IOException{
+
+		File file = new File("bank.txt");
+		RandomAccessFile raf = new RandomAccessFile(file, "rw");
+		while(raf.getFilePointer()<raf.length()){
+			if(accno == raf.readInt()){
+				System.out.println("FOUND");
+			}
+		}
+		raf.close();
+	}
+}

@@ -1,0 +1,33 @@
+package sequence;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.SequenceInputStream;
+import java.util.Enumeration;
+import java.util.Vector;
+
+public class SequenceDemo {
+	public void showContents() throws IOException{
+		FileInputStream f1=new FileInputStream("f1");
+		FileInputStream f2=new FileInputStream("f2.txt");
+		FileInputStream f3=new FileInputStream("abc.txt");
+		
+		Vector v = new Vector();
+		v.add(f1);
+		v.add(f2);
+		v.add(f3);
+		
+		Enumeration e = v.elements();
+		
+		
+		SequenceInputStream sis=new SequenceInputStream(e);
+		int i;
+		while((i=sis.read())!=-1){
+			System.out.print((char)i);
+		}
+		sis.close();
+		f1.close();
+		f2.close();
+		f3.close();
+	}
+}

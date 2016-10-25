@@ -1,0 +1,22 @@
+package com.enumdemo;
+
+ enum Status{
+	 NEW(1),
+	 REJECTED(2),
+	 ACCEPTED(3),
+	 COMPLETED(4);
+	 int value;
+	 
+	 private Status(int value){
+		 this.value = value;
+	 }
+ };
+
+public class EnumDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

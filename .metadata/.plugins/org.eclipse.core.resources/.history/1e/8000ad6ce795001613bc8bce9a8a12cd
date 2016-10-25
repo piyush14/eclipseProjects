@@ -1,0 +1,17 @@
+package middlewaredemo;
+
+public class MiddleWare {
+	
+	public static void toUpperCase(String name){
+		System.out.println(name);
+		
+	}
+	
+	public static Object invokeMethod(String className,String methodName,
+			Class[] paramTypes,Object paramValues[]){
+		
+		
+		Object obj = null;
+		return obj;
+	}
+}

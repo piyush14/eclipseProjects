@@ -1,0 +1,30 @@
+package com.cachedata;
+
+import java.util.Date;
+
+public class App {
+	
+	private class Cache{
+		private int ID;
+		private String name;
+		private long date;
+		
+		public Cache(int ID , String name,long l){
+			this.ID = ID;
+			this.name = name;
+			this.date = l;
+		}
+		
+		
+	}
+	
+	public void addData(){
+		Date date = new Date();
+
+		Cache c =new Cache(101,"ABC",date.getTime());
+	}
+	
+	public void getData(){
+		
+	}
+}

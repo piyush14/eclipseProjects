@@ -1,0 +1,6 @@
+package com.customannotation;
+
+public @interface Getter {
+	String value() default "";
+	String name();
+}
