@@ -1,0 +1,18 @@
+package treeset;
+
+public class TreeSetMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+
+
+class Person{
+	public int weight;
+	public double height;
+	public String name;
+}

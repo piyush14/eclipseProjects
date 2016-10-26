@@ -1,0 +1,43 @@
+package parkingsystem;
+
+public class ParkingMain {
+
+	public static void main(String[] args) {
+		Parked_CarOwner_Details  p = new Parked_CarOwner_Details("ABC", "swift", "101", 987654321, "pune");
+	}
+
+}
+
+
+class Parked_CarOwner_Details {
+	public String ownerName;
+	public String carModel;
+	public String carNO;
+	public long mobileNO;
+	public String address;
+	
+	public Parked_CarOwner_Details( String ownerName, String carModel, String carNO, long mobileNO, String address) {
+		this.ownerName = ownerName;
+		this.carModel = carModel;
+		this.carNO = carNO;
+		this.mobileNO = mobileNO;
+		this.address = address;
+	}
+	
+	
+	 	
+}
+
+class Parked_CarOwenerList{
+	public int add_new_car(Parked_CarOwner_Details obj){
+		return 0;
+	}
+	
+	public void remove_car(){
+		
+	}
+	
+	public void get_parked_car_location(){
+		
+	}
+}

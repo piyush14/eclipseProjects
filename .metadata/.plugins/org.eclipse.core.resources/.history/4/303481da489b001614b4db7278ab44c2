@@ -1,0 +1,17 @@
+package dateofbirth;
+
+public class HashMapMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class Date{
+	public int date;
+	public int month;
+	public int year;
+	
+}

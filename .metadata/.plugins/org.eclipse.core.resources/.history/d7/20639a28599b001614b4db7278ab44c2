@@ -1,0 +1,26 @@
+package chatapplication;
+
+import java.util.HashMap;
+
+public class ChatMain {
+
+	public static void main(String[] args) {
+
+		
+		HashMap<String, Users> chatRoom = new HashMap<>();
+		chatRoom.put("ROOM 1", new Users("ABC", "12345"));
+		chatRoom.put("ROOM 1", new Users("PQR", "12345"));
+		chatRoom.put("ROOM 1", new Users("XYZ", "12345"));
+	}
+
+}
+
+class Users{
+	public String name;
+	public String passwd;
+	
+	public Users(String name,String passwd ) {
+		this.name = name;
+		this.passwd = passwd;
+	}
+}

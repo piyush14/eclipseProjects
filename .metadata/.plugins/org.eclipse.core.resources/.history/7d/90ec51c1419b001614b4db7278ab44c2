@@ -1,0 +1,37 @@
+package treeset;
+
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class TreeSetMain {
+
+	public static void main(String[] args) {
+		
+		Set<Person> set = new TreeSet<Person>();
+		
+		set.add(new Person("ABC",50,5.5));
+		set.add(new Person("PQR",70,6.5));
+		set.add(new Person("XYZ",62,7));
+		
+		
+		Iterator<Person> itr =  set.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr.next().toString());
+		}
+	}
+
+}
+
+
+
+class Person{
+	public int weight;
+	public double height;
+	public String name;
+	public Person(String name,int weight,double height){
+		this.name = name;
+		this.weight = weight;
+		this.height = height;
+	}
+}

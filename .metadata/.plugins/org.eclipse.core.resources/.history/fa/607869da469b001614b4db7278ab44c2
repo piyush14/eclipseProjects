@@ -1,0 +1,15 @@
+package hashset;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+
+public class Set {
+
+	public static void main(String[] args) {
+		HashSet<Integer> hashset = new HashSet<Integer>();
+		LinkedHashSet<Integer> linkedhashset = new LinkedHashSet<Integer>();
+		
+		
+	}
+
+}

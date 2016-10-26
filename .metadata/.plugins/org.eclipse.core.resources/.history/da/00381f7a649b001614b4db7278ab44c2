@@ -1,0 +1,75 @@
+package parkingsystem;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
+
+public class ParkingMain {
+
+	public static void main(String[] args) {
+		Parked_CarOwner_Details  p1 = new Parked_CarOwner_Details("ABC", "swift", "101", 987654321, "pune");
+		Parked_CarOwner_Details  p2 = new Parked_CarOwner_Details("PQR", "swift", "102", 135987465, "pune");
+		Parked_CarOwner_Details  p3 = new Parked_CarOwner_Details("ZYZ", "swift", "103", 987654321, "pune");
+		
+		Parked_CarOwenerList.add_new_car(p1);
+		Parked_CarOwenerList.add_new_car(p2);
+		//generateToken();
+		
+	}
+	
+	
+
+}
+
+
+class Parked_CarOwner_Details {
+	public String ownerName;
+	public String carModel;
+	public String carNO;
+	public long mobileNO;
+	public String address;
+	
+	public Parked_CarOwner_Details( String ownerName, String carModel, String carNO, long mobileNO, String address) {
+		this.ownerName = ownerName;
+		this.carModel = carModel;
+		this.carNO = carNO;
+		this.mobileNO = mobileNO;
+		this.address = address;
+	}
+	
+	
+	 	
+}
+
+class Parked_CarOwenerList{
+	static HashMap<Integer,Parked_CarOwner_Details> list = new HashMap<>();
+	static public int add_new_car(Parked_CarOwner_Details obj){
+		int token = generateToken();
+		list.put(token,obj);
+		return 0;
+	}
+	
+	
+	static public int generateToken(){
+		int floor,section,comp,token;
+		Random ran = new Random();
+		floor = ran.nextInt(3);
+		section = ran.nextInt(4);
+		comp = ran.nextInt(20);
+		System.out.println("f : "+floor +"section : "+section+"comp : "+comp);
+		token = (comp*10)+floor;
+		token = (token * 10) + section;
+		System.out.println("token "+token);
+		return token;
+	}
+	
+	public void remove_car(){
+		
+	}
+	
+	public void get_parked_car_location(int token){
+		int floor = token%10;
+		int section = token%10;
+		int comp = token;
+	}
+}

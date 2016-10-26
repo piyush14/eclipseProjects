@@ -1,0 +1,22 @@
+package employee;
+
+public class EmployeeMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class Employee{
+	public int weight;
+	public double height;
+	public String name;
+	
+	public Employee(String name,int weight,double height){
+		this.name = name;
+		this.weight = weight;
+		this.height = height;
+	}
+}

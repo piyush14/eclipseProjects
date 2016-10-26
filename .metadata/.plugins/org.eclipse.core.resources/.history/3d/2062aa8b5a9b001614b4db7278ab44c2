@@ -1,0 +1,33 @@
+package chatapplication;
+
+import java.util.HashMap;
+
+public class ChatMain {
+
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) {
+
+		
+		HashMap<String, HashMap<String, String>> chatRoom = new HashMap<>();
+		chatRoom.put("ROOM 1", new HashMap(){{put("ABC", "12345");}});
+		chatRoom.put("ROOM 1", new HashMap(){{put("ABC", "12345");}});		
+		
+		for(int i=0 ; i<chatRoom.size();i++){
+			if(chatRoom.containsKey("ROOM 1")){
+				System.out.println("found");
+			}
+		}
+		System.out.println(chatRoom.size());
+	}
+
+}
+
+class Users{
+	public String name;
+	public String passwd;
+	
+	public Users(String name,String passwd ) {
+		this.name = name;
+		this.passwd = passwd;
+	}
+}
