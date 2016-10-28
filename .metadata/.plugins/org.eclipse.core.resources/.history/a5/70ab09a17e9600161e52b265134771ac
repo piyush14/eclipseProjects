@@ -1,5 +1,0 @@
-package com.customannotation;
-
-public @interface Getter {
-
-}

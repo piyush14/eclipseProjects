@@ -1,0 +1,20 @@
+package com.streams;
+
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class StreamsMain {
+
+	private static Collection<Fruit> fruit;
+
+	public static void main(String[] args) {
+		//Collection<Fruit> fruit;
+		List<Fruit> finalfruits = fruit.stream()
+				.filter(fruit -> fruit.getCalories() < 100)
+				.sorted(Comparator.comparing(Fruit::getCalories))
+				.collect(Collectors.toList());	
+	}
+
+}

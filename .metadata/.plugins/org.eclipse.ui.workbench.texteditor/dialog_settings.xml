@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="futureList" key="selection"/>
+		<item value="Person" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Empl"/>
 			<item value="answersList"/>
 			<item value="RunLoops"/>
 			<item value="BloodPressureManager"/>
@@ -15,6 +16,7 @@
 			<item value="Listener"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Person"/>
 			<item value="futureList"/>
 			<item value="MyCallable"/>
 			<item value="BloodPressureManagerOuter"/>

@@ -1,0 +1,84 @@
+package com.streams;
+
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class StreamsMain {
+
+	Fruit f;
+	public static void main(String[] args) {
+		
+        Collection<Fruit> fruits = TestData.getAllFruits();
+        
+        
+		List<Fruit> lowCalorieFruit = fruits.stream()
+                .filter(Fruit -> Fruit.getCalories() < 100)
+                .sorted(Comparator.comparing(Fruit::getCalories).reversed())
+                .collect(Collectors.toList());
+		
+		System.out.println(lowCalorieFruit.toString());
+
+		
+//		List<Fruit> colorList = fruits.stream()
+//				.filter(Fruit ->Fruit.getColor())
+//				.collect(Collectors.toList());
+		
+		Map<String,List<Fruit>> colorwiseFruit= fruits.stream()
+                .collect(Collectors.groupingBy(Fruit::getColor, Collectors.toList()));
+  
+		
+		System.out.println(colorwiseFruit.toString());
+
+		List<Fruit> redFruits = fruits.stream()
+				.filter(Fruit -> Fruit.getColor() == "Red")
+				.collect(Collectors.toList());
+		
+		System.out.println(redFruits);
+		
+		
+		
+		Collection<News> news = TestData.getAllNews();
+		
+		//	Find out how many times the word 'budget' arrived in user comments of all news.
+
+		long count= news.stream()
+				.filter(News -> News.getComment().contains("budget"))
+				.count();
+		System.out.println(count);
+		
+		
+		//Display commentByUser wise number of comments.
+		
+//		List<News> userComments = news.stream()
+//				.filter(News -> News.getCommentByUser())
+//				.distinct()
+//				.collect(Collectors.toList());
+		
+		//Find all transactions in the year 2011 and sort them by value (small to high).
+		
+		Collection<Transaction> transaction = TestData.getAllTransactions();
+		
+		List<Transaction> tran2011 = transaction.stream()
+				.filter(Transaction -> Transaction.getYear() == 2011)
+				.sorted(Comparator.comparing(Transaction::getValue))
+				 .collect(Collectors.toList());
+		
+		System.out.println(tran2011);
+		
+		
+		
+		Collection<Transaction> trader = TestData.getAllTransactions();
+		//What are all the unique cities where the traders work?
+		System.out.println("-----");
+		//List<Transaction> t = 
+		trader.stream()
+				  .distinct()
+				  .forEach(System.out::println);
+
+				
+	}
+
+}

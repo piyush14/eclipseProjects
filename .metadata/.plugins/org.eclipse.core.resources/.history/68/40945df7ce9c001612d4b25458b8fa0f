@@ -1,0 +1,35 @@
+package com.streams;
+
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class StreamsMain {
+
+	Fruit f;
+	public static void main(String[] args) {
+		
+        Collection<Fruit> fruits = TestData.getAllFruits();
+        
+        
+		List<Fruit> lowCalorieFruit = fruits.stream()
+                .filter(Fruit -> Fruit.getCalories() < 100)
+                .sorted(Comparator.comparing(Fruit::getCalories).reversed())
+                .collect(Collectors.toList());
+		
+		System.out.println(lowCalorieFruit.toString());
+
+		
+		List<Fruit> colorList = fruits.stream()
+				.filter(Fruit ->Fruit.getColor())
+				.collect(Collectors.toList());
+		
+		Map<String, Long> counting = fruits.stream().collect(
+                Collectors.groupingBy(Fruit::getName, Collectors.counting()));
+
+				
+	}
+
+}
