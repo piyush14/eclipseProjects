@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="" method="GET">
+		<input type="checkbox" name="HistoryBook" value="Book_1">Book_1<br>
+		<input type="checkbox" name="HistoryBook" value="Book_2">Book_1<br>
+		<input type="checkbox" name="HistoryBook" value="Book_3">Book_1<br>
+	</form>
+</body>
+</html>
