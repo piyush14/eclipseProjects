@@ -1,0 +1,23 @@
+package com.junit;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class StringOperationsTest {
+
+	@Test
+	public void concatTest(){
+		assertEquals("HelloWorld", StringOperations.Concat());
+	}
+	
+	@Test
+	public void getCharacterTest(){
+		assertEquals("l", StringOperations.getCharacter(2));
+	}
+	
+	@Test
+	public void getLengthTest(){
+		assertEquals(5, StringOperations.getLength());
+
+	}
+}

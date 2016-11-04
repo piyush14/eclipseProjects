@@ -1,0 +1,12 @@
+package com.junit;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class StringOperationsTest {
+
+	@Test
+	public void concatTest(){
+		assertEquals("Hello World", StringOperations.Concat());
+	}
+}

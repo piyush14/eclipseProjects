@@ -1,0 +1,16 @@
+package com.junit;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class GetCharTest {
+	@Test
+	public void getCharacterTest(){
+		assertEquals("l", GetChar.getCharacter(2));
+		assertEquals("e", GetChar.getCharacter(1));
+
+		assertEquals("l", GetChar.getCharacter(2));
+
+	}
+}

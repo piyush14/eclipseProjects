@@ -1,0 +1,12 @@
+package com.junit;
+
+public class StringOperations {
+
+	public static String Concat(){
+		return "Hello".concat("World");
+	}
+	
+	public static char getCharacter(){
+		return "Hello".charAt(2);
+	}
+}

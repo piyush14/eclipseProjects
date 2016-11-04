@@ -1,0 +1,11 @@
+package com.junit;
+
+public class GetChar {
+
+	public static String getCharacter(int index){
+		//System.out.println("Hello".charAt(2));
+		char temp = "Hello".charAt(index);
+		return Character.toString(temp);
+
+	}
+}

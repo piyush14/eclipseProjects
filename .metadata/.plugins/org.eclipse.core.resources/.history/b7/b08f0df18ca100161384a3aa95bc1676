@@ -1,0 +1,56 @@
+package com.junit;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+
+public class StringOperationsTest {
+
+	@BeforeClass
+	public static void  beforeClassMethod(){
+		System.out.println("\t\t\tBefore Class Called");
+	}
+
+	@AfterClass
+	public static void afterClassMethod(){
+		System.out.println("\t\t\tAfter Class Called");
+	}
+	
+	
+	@Before
+	public void beforeMethod(){
+		System.out.println("\tBefore Called");
+	}
+	@After
+	public void afterMethod(){
+		System.out.println("\t\tAfter Called");
+	}
+		
+	
+	
+	@Test
+	public void concatTest(){
+		assertEquals("HelloWorld", StringOperations.Concat("Hello","World"));
+		assertEquals("HelloPune", StringOperations.Concat("Hello","Pune"));
+		assertEquals("welcomeWorld", StringOperations.Concat("welcome","World"));
+	}
+	
+	@Test
+	public void getCharacterTest(){
+		assertEquals("l", StringOperations.getCharacter(2));
+		assertEquals("e", StringOperations.getCharacter(1));
+
+		assertEquals("l", StringOperations.getCharacter(2));
+
+	}
+	
+	@Test
+	public void getLengthTest(){
+		assertEquals(5, StringOperations.getLength());
+
+	}
+}

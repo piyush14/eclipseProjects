@@ -1,0 +1,15 @@
+package com.junit;
+
+public class StringOperations {
+
+	public static String Concat(){
+		return "Hello".concat("World");
+	}
+	
+	public static String getCharacter(int index){
+		//System.out.println("Hello".charAt(2));
+		char temp = "Hello".charAt(index);
+		return Character.toString(temp);
+
+	}
+}

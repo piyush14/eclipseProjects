@@ -1,0 +1,53 @@
+package com.mockito.MockitoTest;
+import static org.mockito.Mockito.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
+
+
+
+@RunWith(MockitoJUnitRunner.class)
+
+public class MockTest {
+
+	  private Employee e;
+	  private static DatabaseOpr db;
+	  private Statement stmt;
+	  private ResultSet rs;
+	  private Connection con;
+	  @Before
+	  public void setup() {
+		  db = mock(DatabaseOpr.class);
+		  stmt = mock(Statement.class);
+		  rs = mock(ResultSet.class);
+		  con = mock(Connection.class);
+	  }
+	  
+	  @Test
+	  public void testEmp() throws Exception{
+		  Class.forName("oracle.jdbc.driver.OracleDriver");
+			 con = 
+	DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "12345");
+			 stmt = con.createStatement();
+			 rs = stmt.executeQuery("SELECT * FROM EMP");
+			List<Employee> empList = new ArrayList<Employee>();
+			while(rs.next()) {
+				Employee e = new Employee(rs.getInt("ID"), rs.getString("NAME"), rs.getDouble("SALARY"));
+				empList.add(e);
+	  }
+	  }
+}
+	
+
+

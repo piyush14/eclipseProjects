@@ -1,0 +1,38 @@
+package com.junit;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+
+public class StringOperationsTest {
+
+	
+	@Before
+	public void beforeMethod(){
+		System.out.println("\tBefore Called");
+	}
+	@After
+	public void afterMethod(){
+		System.out.println("\t\tAfter Called");
+	}
+		
+	
+	
+	@Test
+	public void concatTest(){
+		assertEquals("HelloWorld", StringOperations.Concat("Hello","World"));
+	}
+	
+	@Test
+	public void getCharacterTest(){
+		assertEquals("l", StringOperations.getCharacter(2));
+	}
+	
+	@Test
+	public void getLengthTest(){
+		assertEquals(5, StringOperations.getLength());
+
+	}
+}
