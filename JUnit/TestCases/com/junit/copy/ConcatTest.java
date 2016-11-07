@@ -11,8 +11,9 @@ import com.junit.StringOperations;
 public class ConcatTest {
 	
 	@Parameters
-	 public static Object[] data() {
-	        return new Object[] { "first","second"};
+	 public static Collection<Object[]> data() {
+		Object[][] data = {{ "first","second"}};
+	 return Arrays.asList(data);
 	 }
 	@Parameter(0)
 	  public static String x;
